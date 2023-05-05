@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
+
 import { NavLink } from "@/components/nav-link";
 import { ChevronDown } from "lucide-react";
 
