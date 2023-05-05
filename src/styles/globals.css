@@ -7,8 +7,7 @@ body {
 }
 
 :root,
-body,
-#__next {
+body {
   height: 100%;
 
   -webkit-tap-highlight-color: transparent;

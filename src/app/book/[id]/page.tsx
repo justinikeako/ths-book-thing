@@ -1,6 +1,10 @@
 import { BookListItem } from "@/components/book-list-item";
 import Link from "next/link";
 
+export const metadata = {
+  title: "To Kill a Mockingbird | THS Book Rentals",
+};
+
 function Page() {
   return (
     <main className="space-y-32 px-32 pb-16 pt-12">
@@ -35,6 +39,15 @@ function Page() {
               importance of compassion and standing up for what is right.
             </p>
           </section>
+
+          <div className="flex gap-2">
+            <button className="flex w-min items-center gap-1 whitespace-nowrap rounded-full bg-blue-950 px-4 py-2 font-medium text-white">
+              <span>Rent Now</span>
+            </button>
+            <button className="flex w-min items-center gap-1 whitespace-nowrap rounded-full border border-gray-300 px-4 py-2 font-medium text-blue-950">
+              <span>Add to Wishlist</span>
+            </button>
+          </div>
         </section>
       </div>
 

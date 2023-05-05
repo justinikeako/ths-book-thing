@@ -2,6 +2,10 @@ import { Check } from "lucide-react";
 import React from "react";
 import { BookListItem } from "@/components/book-list-item";
 
+export const metadata = {
+  title: "Book Catalogue | THS Book Rentals",
+};
+
 function Page() {
   return (
     <div className="px-32 py-8">
@@ -62,28 +66,28 @@ function Page() {
           <div className="space-y-2">
             <h3 className="text-base font-medium">Subject</h3>
             <ul>
-              <RadioFilter fieldName="grade" value="all" defaultChecked>
+              <RadioFilter fieldName="subject" value="all" defaultChecked>
                 All
               </RadioFilter>
-              <RadioFilter fieldName="grade" value="mathematics">
+              <RadioFilter fieldName="subject" value="mathematics">
                 Mathematics
               </RadioFilter>
-              <RadioFilter fieldName="grade" value="english">
+              <RadioFilter fieldName="subject" value="english">
                 English
               </RadioFilter>
-              <RadioFilter fieldName="grade" value="literature">
+              <RadioFilter fieldName="subject" value="literature">
                 English Literature
               </RadioFilter>
-              <RadioFilter fieldName="grade" value="chemistry">
+              <RadioFilter fieldName="subject" value="chemistry">
                 Chemistry
               </RadioFilter>
-              <RadioFilter fieldName="grade" value="biology">
+              <RadioFilter fieldName="subject" value="biology">
                 Biology
               </RadioFilter>
-              <RadioFilter fieldName="grade" value="it">
+              <RadioFilter fieldName="subject" value="it">
                 Information Technology
               </RadioFilter>
-              <RadioFilter fieldName="grade" value="spanish">
+              <RadioFilter fieldName="subject" value="spanish">
                 Spanish
               </RadioFilter>
             </ul>
@@ -140,14 +144,14 @@ function RadioFilter({
         <input
           type="radio"
           id={id}
-          defaultChecked={defaultChecked}
           name={fieldName}
+          defaultChecked={defaultChecked}
           value={value}
           className="peer hidden"
         />
 
         <span className="select-none">{children}</span>
-        <Check className="hidden h-4 w-4 peer-checked:block" />
+        <Check className="hidden h-4 w-4 peer-checked:block peer-checked:stroke-blue-950" />
       </label>
     </li>
   );

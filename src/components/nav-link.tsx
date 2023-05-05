@@ -18,7 +18,7 @@ function NavLink({ href, children }: NavLinkProps) {
       className={cn(
         "rounded-full px-4 py-2 ",
         active
-          ? "bg-gray-950 text-white"
+          ? "bg-gray-300 font-medium text-blue-950"
           : "hover:bg-gray-200 active:bg-gray-300"
       )}
     >
