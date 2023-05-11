@@ -3,22 +3,24 @@ import Link from "next/link";
 import { Balancer } from "@/components/client-balancer";
 import { ChevronRight, List } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Main } from "@/components/main";
+import { authGatewayRedirect } from "../auth-redirect";
 
 export const metadata = {
   title: "Dashboard | THS Book Rentals",
 };
 
 function Page() {
+  authGatewayRedirect();
+
   return (
-    <main className="grid grid-flow-row grid-cols-1 gap-4 px-8 py-4 md:grid-cols-2 md:px-24 md:py-12 lg:grid-cols-6 lg:px-32 lg:py-16">
-      <div className="flex items-center justify-center py-4 md:py-24 lg:col-span-3 lg:h-80">
-        <h1 className="!text-center text-4xl">
-          <Balancer>Good Morning, Justin.</Balancer>
-        </h1>
+    <Main className="grid grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-6">
+      <div className="flex items-center justify-center py-4 sm:py-8 md:col-span-2 lg:col-span-1 lg:h-80 lg:px-8 xl:col-span-3">
+        <h1 className="!text-center text-4xl">Good Morning, Justin.</h1>
       </div>
 
-      <div className="flex h-80 items-end rounded-3xl bg-gray-100 p-8 lg:col-span-3">
-        <div className="flex w-full flex-col items-start justify-between gap-4 lg:flex-row lg:items-center">
+      <div className="flex h-80 items-end rounded-3xl bg-gray-100 p-8 xl:col-span-3">
+        <div className="flex w-full flex-col items-start justify-between gap-4 xl:flex-row xl:items-center">
           <div className="space-y-1">
             <h2 className="text-xl">Get a head start this year.</h2>
             <p>
@@ -28,13 +30,16 @@ function Page() {
               </Balancer>
             </p>
           </div>
-          <button className="whitespace-nowrap rounded-full bg-gray-950 px-4 py-2 text-white">
+          <Link
+            href="/catalogue"
+            className="whitespace-nowrap rounded-full bg-gray-950 px-4 py-2 text-white"
+          >
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
 
-      <div className="flex h-80 flex-col items-center justify-center gap-4 rounded-3xl bg-gray-100 text-center lg:col-span-2">
+      <div className="flex h-80 flex-col items-center justify-center gap-4 rounded-3xl bg-gray-100 text-center xl:col-span-2">
         <div className="space-y-1">
           <h2 className="text-xl">Textbook Catalogue</h2>
           <p>
@@ -79,7 +84,7 @@ function Page() {
           </p>
         </div>
       </Card>
-    </main>
+    </Main>
   );
 }
 
@@ -89,7 +94,7 @@ type CardProps = React.PropsWithChildren<{
 
 function Card({ title, children }: CardProps) {
   return (
-    <div className="flex h-80 flex-col rounded-3xl bg-gray-100 lg:col-span-2">
+    <div className="flex h-80 flex-col rounded-3xl bg-gray-100 xl:col-span-2">
       <div className="flex items-center justify-between px-8 pb-2 pt-6">
         <h2 className="text-lg">{title}</h2>
         {/* <p>See All</p> */}
@@ -116,24 +121,26 @@ function BookListItem({ title, pickupStatus }: BookListItemProps) {
 
   return (
     <li className="-mx-2 flex items-center gap-2 rounded-xl px-2 py-1 hover:bg-gray-200 active:bg-gray-300">
-      <div className="h-8 w-8 shrink-0 bg-gray-300" />
-      <div className="w-[calc(100%-6rem)] flex-1 select-none">
-        <p className="w-full overflow-hidden overflow-ellipsis whitespace-nowrap">
-          {title}
-        </p>
-        <div className="flex items-center gap-2">
-          <div
-            className={cn(
-              "h-2 w-2 rounded-full",
-              pickupStatus === "ready" && "bg-green-500",
-              pickupStatus === "pending" && "bg-yellow-500",
-              pickupStatus === "delayed" && "bg-orange-500"
-            )}
-          />
-          <p className="text-sm">{formattedPickupStatus[pickupStatus]}</p>
+      <Link href="/book/english" className="contents">
+        <div className="h-8 w-8 shrink-0 bg-gray-300" />
+        <div className="w-[calc(100%-6rem)] flex-1 select-none">
+          <p className="w-full overflow-hidden overflow-ellipsis whitespace-nowrap">
+            {title}
+          </p>
+          <div className="flex items-center gap-2">
+            <div
+              className={cn(
+                "h-2 w-2 rounded-full",
+                pickupStatus === "ready" && "bg-green-500",
+                pickupStatus === "pending" && "bg-yellow-500",
+                pickupStatus === "delayed" && "bg-orange-500"
+              )}
+            />
+            <p className="text-sm">{formattedPickupStatus[pickupStatus]}</p>
+          </div>
         </div>
-      </div>
-      <ChevronRight className="shrink-0" strokeWidth={1} />
+        <ChevronRight className="shrink-0" strokeWidth={1} />
+      </Link>
     </li>
   );
 }

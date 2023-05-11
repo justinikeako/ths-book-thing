@@ -10,14 +10,18 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/sheet";
+import { authGatewayRedirect } from "../auth-redirect";
+import { Main } from "@/components/main";
 
 export const metadata = {
   title: "Book Catalogue | THS Book Rentals",
 };
 
 function Page() {
+  authGatewayRedirect();
+
   return (
-    <main className="px-8 py-4 md:px-24 md:py-12 lg:px-32 lg:py-16">
+    <Main>
       <h1 className="text-4xl">Book Catalogue</h1>
       <div className="mt-8 flex flex-col gap-8 lg:flex-row">
         <div className="hidden w-72 space-y-6 rounded-3xl bg-gray-100 p-6 lg:block">
@@ -210,7 +214,7 @@ function Page() {
             <X className="h-5 w-5" />
           </button>
         </div>
-        <ul className="grid flex-1 grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:gap-8 xl:grid-cols-4">
+        <ul className="grid flex-1 grid-cols-1 gap-8 xs:grid-cols-2 xs:gap-4 md:grid-cols-3 lg:gap-8 xl:grid-cols-4">
           <BookListItem
             title="Achieve! A complete English course for CSEC English A examination: 2nd Edition"
             price={3500}
@@ -233,7 +237,7 @@ function Page() {
           />
         </ul>
       </div>
-    </main>
+    </Main>
   );
 }
 

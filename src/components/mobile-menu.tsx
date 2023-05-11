@@ -102,24 +102,24 @@ export function MobileMenu() {
                 initial="hide"
                 animate="show"
                 exit="hide"
-                className="fixed inset-0 flex flex-col bg-gray-950 text-white"
+                className="fixed inset-0 flex flex-col bg-gray-100 text-black"
               >
-                <div className="flex items-center justify-between px-8 py-4 md:px-24">
+                <div className="flex items-center justify-between px-4 py-4 xs:px-8 sm:px-16 md:px-24 md:py-6 lg:px-32 lg:py-6">
                   <Link
                     scroll={false}
                     href="/"
                     onClick={() => setMenuOpen(false)}
                   >
-                    {/* <div className="max-sm:hidden">
+                    {/* <div className="max-xs:hidden">
 														<Logo withText />
 													</div> */}
-                    {/* <div className="sm:hidden"> */}
+                    {/* <div className="xs:hidden"> */}
                     <Logo />
                     {/* </div> */}
                   </Link>
 
                   <Dialog.Close asChild>
-                    <button className="block rounded-full p-4 text-white hover:bg-gray-800 active:bg-gray-900 ">
+                    <button className="block rounded-full p-4 hover:bg-gray-200 active:bg-gray-300 ">
                       <X />
                     </button>
                   </Dialog.Close>
@@ -129,7 +129,7 @@ export function MobileMenu() {
                   variants={variants.list}
                   initial="hide"
                   animate="show"
-                  className="flex flex-1 flex-col items-start justify-center gap-8 px-16 text-3xl md:px-24"
+                  className="flex flex-1 flex-col items-start justify-center gap-8 px-4 py-4 text-3xl xs:px-8 sm:px-16 md:px-24 lg:px-32"
                 >
                   <NavLink href="/dashboard" onClick={() => setMenuOpen(false)}>
                     Dashboard

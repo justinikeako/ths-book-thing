@@ -1,13 +1,17 @@
 import { BookListItem } from "@/components/book-list-item";
 import Link from "next/link";
+import { authGatewayRedirect } from "../../auth-redirect";
+import { Main } from "@/components/main";
 
 export const metadata = {
   title: "To Kill a Mockingbird | THS Book Rentals",
 };
 
 function Page() {
+  authGatewayRedirect();
+
   return (
-    <main className="space-y-32 px-8 py-4 md:px-24 md:py-12 lg:px-32 lg:py-16">
+    <Main className="space-y-32">
       <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-16 lg:gap-32">
         <section className="aspect-square bg-gray-200 md:sticky md:top-8 md:flex-[2] lg:flex-[3]"></section>
         <section className="space-y-8 md:flex-[3] lg:flex-[4] lg:space-y-12">
@@ -19,7 +23,7 @@ function Page() {
               </p>
               <h1 className="font-display text-4xl">To Kill a Mockingbird</h1>
             </div>
-            <div className="flex flex-wrap justify-between gap-8 text-lg">
+            <div className="flex flex-wrap justify-between gap-x-8 text-lg">
               <p className="text-orange-600">3 copies left</p>
               <p>JMD $2,200/year</p>
             </div>
@@ -55,7 +59,7 @@ function Page() {
         <h2 className="font-display max-w-[28ch] self-center text-center text-3xl">
           Other students were interested in:
         </h2>
-        <ul className="grid flex-1 grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+        <ul className="grid flex-1 grid-cols-1 gap-8 xs:grid-cols-2 md:grid-cols-3">
           <BookListItem
             title="Achieve! A complete English course for CSEC English A examination: 2nd Edition"
             price={3500}
@@ -73,7 +77,7 @@ function Page() {
           />
         </ul>
       </section>
-    </main>
+    </Main>
   );
 }
 
