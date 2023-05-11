@@ -16,7 +16,7 @@ export default function RootLayout(props: React.PropsWithChildren) {
 
       {props.children}
 
-      <footer className="flex flex-wrap items-center justify-between px-8 py-4 lg:px-32 lg:py-6">
+      <footer className="flex flex-wrap items-center justify-between px-8 py-4 md:px-24 md:py-6 lg:px-32 lg:py-6">
         <p>Copyright &copy; 2023 Tarrant High School</p>
         <p>
           Created by&nbsp;
