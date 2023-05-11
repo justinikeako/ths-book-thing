@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.no-scrollbar {
+  scrollbar-width: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-size: 14px;
 }

@@ -1,21 +1,16 @@
 import { cookies } from "next/headers";
-import { Dashboard } from "./dashboard";
-import { Login } from "./login";
-
-export function generateMetadata() {
-  const isLoggedIn = cookies().get("loggedIn");
-
-  const title = isLoggedIn ? "Dashboard" : "Login";
-
-  return {
-    title: `${title} | THS Book Rentals`,
-  };
-}
+import { redirect } from "next/navigation";
 
 function Page() {
-  const isLoggedIn = cookies().get("loggedIn");
+  const isLoggedIn = cookies().get("loggedIn")?.value === "true";
 
-  return isLoggedIn ? <Dashboard /> : <Login />;
+  if (isLoggedIn) {
+    console.log("Logged in, redirecting to dashboard");
+    redirect("/dashboard");
+  } else {
+    console.log("Not logged in, redirecting to login");
+    redirect("/login");
+  }
 }
 
 export default Page;

@@ -4,7 +4,7 @@ export const metadata = {
 
 function Page() {
   return (
-    <main className="flex-1 space-y-4 px-32 pt-16">
+    <main className="flex-1 space-y-4 px-8 pt-16 lg:px-32">
       <h1 className="text-center text-4xl">Get in touch.</h1>
       <p className="text-center">
         Call us at&nbsp;

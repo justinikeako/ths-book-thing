@@ -1,7 +1,11 @@
 import { type Config } from "tailwindcss";
 
 export default {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/app/**/*.tsx", "./src/components/**/*.tsx"],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+
   theme: {
     fontSize: {
       sm: ["0.8em", { lineHeight: "1.5" }],
@@ -16,7 +20,12 @@ export default {
       ],
     },
 
-    extend: {},
+    extend: {
+      screens: {
+        sm: "360px",
+        md: "512px",
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

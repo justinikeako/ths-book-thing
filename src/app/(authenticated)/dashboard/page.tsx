@@ -1,21 +1,25 @@
 import React from "react";
 import Link from "next/link";
-import Balancer from "react-wrap-balancer";
+import { Balancer } from "@/components/client-balancer";
 import { ChevronRight, List } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-function Dashboard() {
+export const metadata = {
+  title: "Dashboard | THS Book Rentals",
+};
+
+function Page() {
   return (
-    <main className="grid grid-cols-6 gap-4 px-32 py-8">
-      <div className="col-span-3 flex h-80 items-center justify-center">
-        <h1 className="text-center text-4xl">
+    <main className="grid grid-flow-row grid-cols-1 gap-4 px-8 py-4 md:grid-cols-2 md:px-24 md:py-12 lg:grid-cols-6 lg:px-32 lg:py-16">
+      <div className="flex items-center justify-center py-4 md:py-24 lg:col-span-3 lg:h-80">
+        <h1 className="!text-center text-4xl">
           <Balancer>Good Morning, Justin.</Balancer>
         </h1>
       </div>
 
-      <div className="col-span-3 flex h-80 items-end rounded-3xl bg-gray-100 p-8">
-        <div className="flex w-full items-center justify-between">
-          <div>
+      <div className="flex h-80 items-end rounded-3xl bg-gray-100 p-8 lg:col-span-3">
+        <div className="flex w-full flex-col items-start justify-between gap-4 lg:flex-row lg:items-center">
+          <div className="space-y-1">
             <h2 className="text-xl">Get a head start this year.</h2>
             <p>
               <Balancer ratio={0.5}>
@@ -30,8 +34,8 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="col-span-2 flex h-80 flex-col items-center justify-center gap-4 rounded-3xl bg-gray-100 text-center">
-        <div>
+      <div className="flex h-80 flex-col items-center justify-center gap-4 rounded-3xl bg-gray-100 text-center lg:col-span-2">
+        <div className="space-y-1">
           <h2 className="text-xl">Textbook Catalogue</h2>
           <p>
             <Balancer ratio={0.5}>
@@ -65,9 +69,9 @@ function Dashboard() {
         </ul>
       </Card>
       <Card title="Outstanding Rentals">
-        <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-center">
+        <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-center text-gray-400">
           <List />
-          <p>
+          <p className="max-w-[40ch]">
             <Balancer>
               If you have any rental books which you have not yet turned, they
               in will appear here.
@@ -85,7 +89,7 @@ type CardProps = React.PropsWithChildren<{
 
 function Card({ title, children }: CardProps) {
   return (
-    <div className="col-span-2 flex h-80 flex-col rounded-3xl bg-gray-100">
+    <div className="flex h-80 flex-col rounded-3xl bg-gray-100 lg:col-span-2">
       <div className="flex items-center justify-between px-8 pb-2 pt-6">
         <h2 className="text-lg">{title}</h2>
         {/* <p>See All</p> */}
@@ -134,4 +138,4 @@ function BookListItem({ title, pickupStatus }: BookListItemProps) {
   );
 }
 
-export { Dashboard };
+export default Page;
