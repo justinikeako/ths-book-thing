@@ -4,7 +4,10 @@ import { Footer } from "@/components/footer";
 import localFont from "next/font/local";
 import "../globals.css";
 
-const inter = localFont({ src: "../fonts/Inter.var.woff2" });
+const inter = localFont({
+  src: "../fonts/Inter.var.woff2",
+  variable: "--font-inter",
+});
 
 export const metadata = {
   title: "THS Book Rentals",

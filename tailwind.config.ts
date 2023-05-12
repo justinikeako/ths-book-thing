@@ -7,6 +7,12 @@ export default {
   },
 
   theme: {
+    fontFamily: {
+      display: ["var(--font-inter)", "sans-serif"],
+      body: ["var(--font-inter)", "sans-serif"],
+      sans: ["var(--font-inter)", "sans-serif"],
+    },
+
     fontSize: {
       sm: ["0.8em", { lineHeight: "1.5" }],
       base: ["1em", { lineHeight: "1.5" }],

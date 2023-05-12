@@ -16,13 +16,17 @@ function Page() {
   return (
     <Main className="grid grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-6">
       <div className="flex items-center justify-center py-4 sm:py-8 md:col-span-2 lg:col-span-1 lg:h-80 lg:px-8 xl:col-span-3">
-        <h1 className="!text-center text-4xl">Good Morning, Justin.</h1>
+        <h1 className="!text-center font-display text-4xl">
+          Good Morning, Justin.
+        </h1>
       </div>
 
       <div className="flex h-80 items-end rounded-3xl bg-gray-100 p-8 xl:col-span-3">
         <div className="flex w-full flex-col items-start justify-between gap-4 xl:flex-row xl:items-center">
           <div className="space-y-1">
-            <h2 className="text-xl">Get a head start this year.</h2>
+            <h2 className="font-display text-xl">
+              Get a head start this year.
+            </h2>
             <p>
               <Balancer ratio={0.5}>
                 Order all the books you need for the school year in just a few
@@ -41,7 +45,7 @@ function Page() {
 
       <div className="flex h-80 flex-col items-center justify-center gap-4 rounded-3xl bg-gray-100 text-center xl:col-span-2">
         <div className="space-y-1">
-          <h2 className="text-xl">Textbook Catalogue</h2>
+          <h2 className="font-display text-xl">Textbook Catalogue</h2>
           <p>
             <Balancer ratio={0.5}>
               We have a wide selection of textbooks for your academic needs.

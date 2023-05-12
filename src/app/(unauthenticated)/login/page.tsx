@@ -27,7 +27,7 @@ function Page() {
         className="max-w-xs space-y-8 rounded-2xl bg-gray-100 p-8"
         action={login}
       >
-        <h1 className="text-center text-xl">
+        <h1 className="text-center font-display text-xl">
           <Balancer>Please sign in with your StudentID to continue.</Balancer>
         </h1>
 
