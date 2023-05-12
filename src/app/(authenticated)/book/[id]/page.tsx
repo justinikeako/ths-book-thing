@@ -11,8 +11,8 @@ function Page() {
   authGatewayRedirect();
 
   return (
-      <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-16 lg:gap-32">
     <Main className="space-y-32">
+      <section className="flex flex-col gap-8 md:flex-row md:items-start md:gap-16 lg:gap-32">
         <section className="aspect-square bg-gray-200 md:sticky md:top-8 md:flex-[2] lg:flex-[3]"></section>
         <section className="space-y-8 md:flex-[3] lg:flex-[4] lg:space-y-12">
           {/* Basic Info */}
@@ -53,7 +53,7 @@ function Page() {
             </button>
           </div>
         </section>
-      </div>
+      </section>
 
       <section className="flex flex-col space-y-16">
         <h2 className="font-display max-w-[28ch] self-center text-center text-3xl">
