@@ -1,19 +1,12 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
-// import localFont from "next/font/local";
-import { Montserrat } from "next/font/google";
+import localFont from "next/font/local";
 import "../globals.css";
 
-// const inter = localFont({
-//   src: "../fonts/Inter.var.woff2",
-//   display: "swap",
-//   variable: "--font-inter",
-// });
-
-const inter = Montserrat({
+const inter = localFont({
+  src: "../fonts/Inter.var.woff2",
   display: "swap",
-  subsets: ["latin"],
   variable: "--font-inter",
 });
 
@@ -27,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout(props: React.PropsWithChildren) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} font-sans`}>
       <body className="flex flex-col">
         <Header />
 
