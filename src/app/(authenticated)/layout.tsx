@@ -13,6 +13,7 @@ import "../globals.css";
 
 const inter = Montserrat({
   display: "swap",
+  subsets: ["latin"],
   variable: "--font-inter",
 });
 
