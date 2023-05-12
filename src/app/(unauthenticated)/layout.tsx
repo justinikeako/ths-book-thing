@@ -1,6 +1,11 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
+import localFont from "next/font/local";
+import "../globals.css";
+
+const inter = localFont({ src: "./fonts/Inter.var.woff2" });
+
 export const metadata = {
   title: "THS Book Rentals",
   description: "Rent the school books you need.",
@@ -11,12 +16,14 @@ export const metadata = {
 
 export default function RootLayout(props: React.PropsWithChildren) {
   return (
-    <>
-      <Header />
+    <html lang="en" className={inter.className}>
+      <body className="flex flex-col">
+        <Header />
 
-      {props.children}
+        {props.children}
 
-      <Footer />
-    </>
+        <Footer />
+      </body>
+    </html>
   );
 }
