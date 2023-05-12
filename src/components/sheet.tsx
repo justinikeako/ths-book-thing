@@ -67,7 +67,7 @@ const sheetVariants = cva(
       size: {
         content: "",
         default: "",
-        xs: "",
+        sm: "",
         lg: "",
         xl: "",
         full: "",
@@ -191,7 +191,7 @@ const SheetFooter = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "xs:flex-row xs:justify-end xs:space-x-2 flex flex-col-reverse",
+      "flex flex-col-reverse xs:flex-row xs:justify-end xs:space-x-2",
       className
     )}
     {...props}
