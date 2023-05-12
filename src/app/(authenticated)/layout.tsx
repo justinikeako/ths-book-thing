@@ -19,7 +19,7 @@ export const metadata = {
 
 export default function RootLayout(props: React.PropsWithChildren) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={inter.variable}>
       <body className="flex flex-col">
         <Header />
 
