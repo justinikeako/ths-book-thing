@@ -6,6 +6,7 @@ import "../globals.css";
 
 const inter = localFont({
   src: "../fonts/Inter.var.woff2",
+  display: "swap",
   variable: "--font-inter",
 });
 
