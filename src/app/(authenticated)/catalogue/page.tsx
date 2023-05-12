@@ -13,6 +13,7 @@ import {
 import { authGatewayRedirect } from "../auth-redirect";
 import { Main } from "@/components/main";
 import { getBooks } from "@/utils/mock-db";
+import { OrchestratedReveal } from "@/components/reveal";
 
 export const metadata = {
   title: "Book Catalogue | THS Book Rentals",
@@ -25,9 +26,14 @@ function Page() {
 
   return (
     <Main>
-      <h1 className="text-4xl">Book Catalogue</h1>
+      <OrchestratedReveal asChild delay={0.1}>
+        <h1 className="text-4xl">Book Catalogue</h1>
+      </OrchestratedReveal>
       <div className="mt-8 flex flex-col gap-8 lg:flex-row">
-        <div className="-ml-6 hidden w-72 space-y-6 rounded-3xl bg-gray-100 p-6 lg:block">
+        <OrchestratedReveal
+          delay={0.2}
+          className="-ml-6 hidden shrink-0 basis-72 space-y-6 rounded-3xl bg-gray-100 p-6 lg:block"
+        >
           <h2 className="text-lg">Book Filters</h2>
 
           <div className="space-y-2">
@@ -108,9 +114,12 @@ function Page() {
               </RadioFilter>
             </ul>
           </div>
-        </div>
+        </OrchestratedReveal>
 
-        <div className="no-scrollbar -mx-8 flex gap-2 overflow-auto px-8 lg:hidden">
+        <OrchestratedReveal
+          delay={0.2}
+          className="no-scrollbar -mx-8 flex gap-2 overflow-auto px-8 lg:hidden"
+        >
           <Sheet>
             <SheetTrigger asChild>
               <button className="flex shrink-0 items-center gap-1 self-start whitespace-nowrap rounded-full border border-gray-300 p-3 font-medium hover:bg-gray-100 active:bg-gray-200 lg:hidden">
@@ -216,16 +225,18 @@ function Page() {
             <span>All Subjects</span>
             <X className="h-5 w-5" />
           </button>
-        </div>
-        <ul className="grid flex-1 grid-cols-1 gap-8 xs:grid-cols-2 xs:gap-4 md:grid-cols-3 lg:grid-cols-2 lg:gap-8 xl:grid-cols-3 2xl:grid-cols-4">
-          {books.map((relatedBook) => (
-            <BookListItem
-              title={relatedBook.title}
-              price={relatedBook.price}
-              bookId={relatedBook.id}
-            />
-          ))}
-        </ul>
+        </OrchestratedReveal>
+        <OrchestratedReveal delay={0.3}>
+          <ul className="grid flex-1 grid-cols-1 gap-8 xs:grid-cols-2 xs:gap-4 md:grid-cols-3 lg:grid-cols-2 lg:gap-8 xl:grid-cols-3 2xl:grid-cols-4">
+            {books.map((relatedBook) => (
+              <BookListItem
+                title={relatedBook.title}
+                price={relatedBook.price}
+                bookId={relatedBook.id}
+              />
+            ))}
+          </ul>
+        </OrchestratedReveal>
       </div>
     </Main>
   );

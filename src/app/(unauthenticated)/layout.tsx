@@ -1,5 +1,4 @@
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { cn } from "@/lib/utils";
 
 import localFont from "next/font/local";
 import "../globals.css";
@@ -20,13 +19,9 @@ export const metadata = {
 
 export default function RootLayout(props: React.PropsWithChildren) {
   return (
-    <html lang="en" className={`${inter.variable} font-sans`}>
-      <body className="flex flex-col">
-        <Header />
-
+    <html lang="en" className={cn(inter.variable, "h-full font-sans")}>
+      <body className="flex h-full flex-col overflow-hidden">
         {props.children}
-
-        <Footer />
       </body>
     </html>
   );

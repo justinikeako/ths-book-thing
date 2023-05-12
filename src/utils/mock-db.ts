@@ -1,4 +1,5 @@
 import { addDays } from "date-fns";
+import { notFound } from "next/navigation";
 
 export type Stock = { quantity: number };
 export type RestockQueue = { quantity: number; date: Date }[];

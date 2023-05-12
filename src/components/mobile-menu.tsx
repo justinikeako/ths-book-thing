@@ -105,11 +105,7 @@ export function MobileMenu() {
                 className="fixed inset-0 flex flex-col bg-gray-100 text-black"
               >
                 <div className="flex items-center justify-between px-4 py-4 xs:px-8 sm:px-16 md:px-24 md:py-6 lg:px-32 lg:py-6">
-                  <Link
-                    scroll={false}
-                    href="/"
-                    onClick={() => setMenuOpen(false)}
-                  >
+                  <Link href="/" onClick={() => setMenuOpen(false)}>
                     {/* <div className="max-xs:hidden">
 														<Logo withText />
 													</div> */}

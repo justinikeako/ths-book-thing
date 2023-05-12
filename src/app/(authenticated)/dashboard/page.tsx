@@ -5,6 +5,7 @@ import { ChevronRight, List } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Main } from "@/components/main";
 import { authGatewayRedirect } from "../auth-redirect";
+import { OrchestratedReveal } from "@/components/reveal";
 
 export const metadata = {
   title: "Dashboard | THS Book Rentals",
@@ -47,11 +48,15 @@ function Page() {
 
   return (
     <Main className="grid grid-flow-row grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-6">
-      <div className="flex items-center justify-center py-4 sm:py-8 md:col-span-2 lg:col-span-1 lg:h-80 lg:px-8 xl:col-span-3">
+      <OrchestratedReveal
+        delay={0.1}
+        className="flex items-center justify-center py-4 sm:py-8 md:col-span-2 lg:col-span-1 lg:h-80 lg:px-8 xl:col-span-3"
+      >
         <h1 className="!text-center text-4xl">Good Morning, Justin.</h1>
-      </div>
+      </OrchestratedReveal>
 
-      <div
+      <OrchestratedReveal
+        delay={0.2}
         className="flex h-80 items-end rounded-3xl bg-gray-100 bg-cover p-8 text-white xl:col-span-3"
         style={{
           backgroundImage:
@@ -75,9 +80,10 @@ function Page() {
             Get Started
           </Link>
         </div>
-      </div>
+      </OrchestratedReveal>
 
-      <div
+      <OrchestratedReveal
+        delay={0.3}
         className="flex h-80 flex-col items-center justify-center gap-4 rounded-3xl bg-gray-100 bg-cover text-center text-white xl:col-span-2"
         style={{
           backgroundImage:
@@ -98,16 +104,17 @@ function Page() {
         >
           Explore
         </Link>
-      </div>
+      </OrchestratedReveal>
 
-      <Card title="Rental Pickups">
+      <Card delay={0.4} title="Rental Pickups">
         <ul>
           {books.map((book) => (
             <BookListItem key={book.id} {...book} />
           ))}
         </ul>
       </Card>
-      <Card title="Outstanding Rentals">
+
+      <Card delay={0.5} title="Outstanding Rentals">
         <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-center text-gray-400">
           <List />
           <p className="max-w-[40ch]">
@@ -124,18 +131,22 @@ function Page() {
 
 type CardProps = React.PropsWithChildren<{
   title: string;
+  delay: number;
 }>;
 
-function Card({ title, children }: CardProps) {
+function Card({ title, delay, children }: CardProps) {
   return (
-    <div className="flex h-80 flex-col rounded-3xl bg-gray-100 xl:col-span-2">
+    <OrchestratedReveal
+      delay={delay}
+      className="flex h-80 flex-col rounded-3xl bg-gray-100 xl:col-span-2"
+    >
       <div className="flex items-center justify-between px-8 pb-2 pt-6">
         <h2 className="text-lg">{title}</h2>
         {/* <p>See All</p> */}
       </div>
 
       <div className="flex-1 px-8 pb-6 pt-2">{children}</div>
-    </div>
+    </OrchestratedReveal>
   );
 }
 
