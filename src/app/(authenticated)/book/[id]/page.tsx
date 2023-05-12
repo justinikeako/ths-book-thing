@@ -45,10 +45,10 @@ function Page() {
           </section>
 
           <div className="flex gap-2">
-            <button className="flex w-min items-center gap-1 whitespace-nowrap rounded-full bg-blue-950 px-4 py-2 font-semibold text-white">
+            <button className="flex w-min items-center gap-1 whitespace-nowrap rounded-full bg-blue-950 px-4 py-2 font-medium text-white">
               <span>Rent Now</span>
             </button>
-            <button className="flex w-min items-center gap-1 whitespace-nowrap rounded-full border border-gray-300 px-4 py-2 font-semibold text-blue-950">
+            <button className="flex w-min items-center gap-1 whitespace-nowrap rounded-full border border-gray-300 px-4 py-2 font-medium text-blue-950">
               <span>Add to Wishlist</span>
             </button>
           </div>

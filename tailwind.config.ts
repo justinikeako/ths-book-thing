@@ -20,7 +20,7 @@ export default {
       "3xl": ["2.441em", { lineHeight: "1.15", fontWeight: "500" }],
       "4xl": [
         "3.052em",
-        { lineHeight: "1.15", fontWeight: "600", letterSpacing: "-0.02em" },
+        { lineHeight: "1.15", fontWeight: "500", letterSpacing: "-0.02em" },
       ],
     },
 

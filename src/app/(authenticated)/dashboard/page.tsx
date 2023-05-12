@@ -32,7 +32,7 @@ function Page() {
           </div>
           <Link
             href="/catalogue"
-            className="whitespace-nowrap rounded-full bg-gray-950 px-4 py-2 font-semibold text-white"
+            className="whitespace-nowrap rounded-full bg-gray-950 px-4 py-2 font-medium text-white"
           >
             Get Started
           </Link>
@@ -50,7 +50,7 @@ function Page() {
         </div>
         <Link
           href="/catalogue"
-          className="whitespace-nowrap rounded-full bg-gray-950 px-4 py-2 font-semibold text-white"
+          className="whitespace-nowrap rounded-full bg-gray-950 px-4 py-2 font-medium text-white"
         >
           Explore
         </Link>

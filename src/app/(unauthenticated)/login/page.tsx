@@ -59,7 +59,7 @@ function Page() {
         </div>
         <button
           type="submit"
-          className="flex w-min items-center gap-1 whitespace-nowrap rounded-full bg-blue-950 px-4 py-2 font-semibold text-white"
+          className="flex w-min items-center gap-1 whitespace-nowrap rounded-full bg-blue-950 px-4 py-2 font-medium text-white"
         >
           <span>Sign In</span>
           <LogIn className="h-5 w-5" />

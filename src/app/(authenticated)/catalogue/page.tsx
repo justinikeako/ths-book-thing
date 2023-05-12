@@ -110,7 +110,7 @@ function Page() {
         <div className="no-scrollbar -mx-8 flex gap-2 overflow-auto px-8 lg:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <button className="flex shrink-0 items-center gap-1 self-start whitespace-nowrap rounded-full border border-gray-300 p-3 font-semibold hover:bg-gray-100 active:bg-gray-200 lg:hidden">
+              <button className="flex shrink-0 items-center gap-1 self-start whitespace-nowrap rounded-full border border-gray-300 p-3 font-medium hover:bg-gray-100 active:bg-gray-200 lg:hidden">
                 <SlidersHorizontal className="h-5 w-5" />
                 <span>Filters</span>
               </button>
@@ -205,11 +205,11 @@ function Page() {
             </SheetContent>
           </Sheet>
 
-          <button className="flex shrink-0 items-center gap-2 self-start whitespace-nowrap rounded-full border border-gray-300 p-3 font-semibold hover:bg-gray-100 active:bg-gray-200">
+          <button className="flex shrink-0 items-center gap-2 self-start whitespace-nowrap rounded-full border border-gray-300 p-3 font-medium hover:bg-gray-100 active:bg-gray-200">
             <span>Grade 10</span>
             <X className="h-5 w-5" />
           </button>
-          <button className="flex shrink-0 items-center gap-2 self-start whitespace-nowrap rounded-full border border-gray-300 p-3 font-semibold hover:bg-gray-100 active:bg-gray-200">
+          <button className="flex shrink-0 items-center gap-2 self-start whitespace-nowrap rounded-full border border-gray-300 p-3 font-medium hover:bg-gray-100 active:bg-gray-200">
             <span>All Subjects</span>
             <X className="h-5 w-5" />
           </button>

@@ -15,12 +15,12 @@ export function BookListItem({ title, price, bookId }: BookListItemProps) {
         <p className="text-lg">{title}</p>
         <p className="mt-2">JMD{formatPrice(price)}/year</p>
         <div className="mt-3 flex flex-wrap gap-2">
-          <button className="whitespace-nowrap rounded-full bg-blue-950 px-4 py-2 font-semibold text-white">
+          <button className="whitespace-nowrap rounded-full bg-blue-950 px-4 py-2 font-medium text-white">
             Rent Now
           </button>
           <Link
             href={`/book/${bookId}`}
-            className="whitespace-nowrap rounded-full border border-gray-300 px-4 py-2 font-semibold"
+            className="whitespace-nowrap rounded-full border border-gray-300 px-4 py-2 font-medium"
           >
             Learn More
           </Link>
