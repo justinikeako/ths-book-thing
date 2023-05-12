@@ -1,11 +1,17 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
+import { Montserrat } from "next/font/google";
 import "../globals.css";
 
-const inter = localFont({
-  src: "../fonts/Inter.var.woff2",
+// const inter = localFont({
+//   src: "../fonts/Inter.var.woff2",
+//   display: "swap",
+//   variable: "--font-inter",
+// });
+
+const inter = Montserrat({
   display: "swap",
   variable: "--font-inter",
 });
