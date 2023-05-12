@@ -22,7 +22,7 @@ function Page() {
 
   return (
     <Main>
-      <h1 className="font-display text-4xl">Book Catalogue</h1>
+      <h1 className="text-4xl">Book Catalogue</h1>
       <div className="mt-8 flex flex-col gap-8 lg:flex-row">
         <div className="hidden w-72 space-y-6 rounded-3xl bg-gray-100 p-6 lg:block">
           <h2 className="text-lg">Book Filters</h2>

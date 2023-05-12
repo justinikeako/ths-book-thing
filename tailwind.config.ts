@@ -8,8 +8,6 @@ export default {
 
   theme: {
     fontFamily: {
-      display: ["var(--font-inter)", "sans-serif"],
-      body: ["var(--font-inter)", "sans-serif"],
       sans: ["var(--font-inter)", "sans-serif"],
     },
 

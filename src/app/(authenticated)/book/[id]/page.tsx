@@ -18,10 +18,10 @@ function Page() {
           {/* Basic Info */}
           <section className="space-y-2">
             <div>
-              <p className="font-display text-lg">
+              <p className="text-lg">
                 <Link href={`/catalogue`}>Literature · Harper Lee</Link>
               </p>
-              <h1 className="font-display text-4xl">To Kill a Mockingbird</h1>
+              <h1 className="text-4xl">To Kill a Mockingbird</h1>
             </div>
             <div className="flex flex-wrap justify-between gap-x-8 text-lg">
               <p className="text-orange-600">3 copies left</p>
@@ -56,7 +56,7 @@ function Page() {
       </section>
 
       <section className="flex flex-col space-y-16">
-        <h2 className="font-display max-w-[28ch] self-center text-center text-3xl">
+        <h2 className="max-w-[28ch] self-center text-center text-3xl">
           Other students were interested in:
         </h2>
         <ul className="grid flex-1 grid-cols-1 gap-8 xs:grid-cols-2 md:grid-cols-3">

@@ -21,6 +21,13 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-.font-display {
-  font-variation-settings: "opsz" 48;
+.text-4xl,
+.text-3xl,
+.text-2xl {
+  font-variation-settings: "opsz" 32;
+}
+
+.text-xl,
+.text-lg {
+  font-variation-settings: "opsz" 24;
 }
