@@ -10,6 +10,38 @@ export const metadata = {
   title: "Dashboard | THS Book Rentals",
 };
 
+type BookOrderStatus = "ready" | "pending" | "delayed";
+
+type Book = {
+  id: string;
+  title: string;
+  pickupStatus: BookOrderStatus;
+};
+
+const books: Book[] = [
+  {
+    id: "maths_complete",
+    title: "Mathematics A complete course with CXC Questions",
+    pickupStatus: "ready",
+  },
+  {
+    id: "achieve_english",
+    title:
+      "Achieve! A complete English course for CSEC English A examination: 2nd Edition",
+    pickupStatus: "ready",
+  },
+  {
+    id: "to_kill_a_mocking_bird",
+    title: "To Kill a Mockingbird",
+    pickupStatus: "pending",
+  },
+  {
+    id: "dime_mucho",
+    title: "Dime Mucho 1st Edition Student's Book 2",
+    pickupStatus: "delayed",
+  },
+];
+
 function Page() {
   authGatewayRedirect();
 
@@ -19,7 +51,13 @@ function Page() {
         <h1 className="!text-center text-4xl">Good Morning, Justin.</h1>
       </div>
 
-      <div className="flex h-80 items-end rounded-3xl bg-gray-100 p-8 xl:col-span-3">
+      <div
+        className="flex h-80 items-end rounded-3xl bg-gray-100 bg-cover p-8 text-white xl:col-span-3"
+        style={{
+          backgroundImage:
+            "linear-gradient(to top, #0008 30%, #0000), url('/studying.png')",
+        }}
+      >
         <div className="flex w-full flex-col items-start justify-between gap-4 xl:flex-row xl:items-center">
           <div className="space-y-1">
             <h2 className="text-xl">Get a head start this year.</h2>
@@ -32,14 +70,20 @@ function Page() {
           </div>
           <Link
             href="/catalogue"
-            className="whitespace-nowrap rounded-full bg-gray-950 px-4 py-2 font-medium text-white"
+            className="whitespace-nowrap rounded-full bg-white px-4 py-2 font-medium text-gray-950"
           >
             Get Started
           </Link>
         </div>
       </div>
 
-      <div className="flex h-80 flex-col items-center justify-center gap-4 rounded-3xl bg-gray-100 text-center xl:col-span-2">
+      <div
+        className="flex h-80 flex-col items-center justify-center gap-4 rounded-3xl bg-gray-100 bg-cover text-center text-white xl:col-span-2"
+        style={{
+          backgroundImage:
+            "linear-gradient(to top, #0008, #0008), url('/bookshelf.png')",
+        }}
+      >
         <div className="space-y-1">
           <h2 className="text-xl">Textbook Catalogue</h2>
           <p>
@@ -50,7 +94,7 @@ function Page() {
         </div>
         <Link
           href="/catalogue"
-          className="whitespace-nowrap rounded-full bg-gray-950 px-4 py-2 font-medium text-white"
+          className="whitespace-nowrap rounded-full bg-white px-4 py-2 font-medium text-gray-950"
         >
           Explore
         </Link>
@@ -58,19 +102,9 @@ function Page() {
 
       <Card title="Rental Pickups">
         <ul>
-          <BookListItem
-            title="Mathematics A complete course with CXC Questions"
-            pickupStatus="ready"
-          />
-          <BookListItem
-            title="Achieve! A complete English course for CSEC English A examination: 2nd Edition"
-            pickupStatus="ready"
-          />
-          <BookListItem title="To Kill a Mockingbird" pickupStatus="pending" />
-          <BookListItem
-            title="Dime Mucho 1st Edition Student's Book 2"
-            pickupStatus="delayed"
-          />
+          {books.map((book) => (
+            <BookListItem key={book.id} {...book} />
+          ))}
         </ul>
       </Card>
       <Card title="Outstanding Rentals">
@@ -105,14 +139,7 @@ function Card({ title, children }: CardProps) {
   );
 }
 
-type BookOrderStatus = "ready" | "pending" | "delayed";
-
-type BookListItemProps = {
-  title: string;
-  pickupStatus: BookOrderStatus;
-};
-
-function BookListItem({ title, pickupStatus }: BookListItemProps) {
+function BookListItem({ id, title, pickupStatus }: Book) {
   const formattedPickupStatus: { [key in BookOrderStatus]: string } = {
     ready: "Ready for pickup",
     pending: "Order Pending",
@@ -121,8 +148,11 @@ function BookListItem({ title, pickupStatus }: BookListItemProps) {
 
   return (
     <li className="-mx-2 flex items-center gap-2 rounded-xl px-2 py-1 hover:bg-gray-200 active:bg-gray-300">
-      <Link href="/book/english" className="contents">
-        <div className="h-8 w-8 shrink-0 bg-gray-300" />
+      <Link href={`/book/${id}`} className="contents">
+        <div
+          className="bg- relative h-8 w-8 shrink-0 bg-contain bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('/${id}.png')` }}
+        />
         <div className="w-[calc(100%-6rem)] flex-1 select-none">
           <p className="w-full overflow-hidden overflow-ellipsis whitespace-nowrap">
             {title}

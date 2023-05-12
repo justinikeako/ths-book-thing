@@ -7,10 +7,14 @@ type BookListItemProps = {
   price: number;
   bookId: string;
 };
+
 export function BookListItem({ title, price, bookId }: BookListItemProps) {
   return (
     <li className="col-span-1 space-y-4">
-      <div className="aspect-square bg-gray-300" />
+      <div
+        className="aspect-square bg-gray-300 bg-contain bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('/${bookId}.png')` }}
+      />
       <div>
         <p className="text-lg">{title}</p>
         <p className="mt-2">JMD{formatPrice(price)}/year</p>

@@ -60,7 +60,7 @@ const sheetVariants = cva(
       position: {
         top: "w-full duration-300",
         bottom:
-          "w-full md:max-w-md rounded-t-2xl md:rounded-2xl md:bottom-8 duration-300",
+          "w-full xs:max-w-xs sm:max-w-sm md:max-w-md rounded-t-2xl xs:rounded-2xl  xs:bottom-8 duration-300",
         left: "h-full duration-300",
         right: "h-full duration-300",
       },

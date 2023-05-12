@@ -12,6 +12,7 @@ import {
 } from "@/components/sheet";
 import { authGatewayRedirect } from "../auth-redirect";
 import { Main } from "@/components/main";
+import { getBooks } from "@/utils/mock-db";
 
 export const metadata = {
   title: "Book Catalogue | THS Book Rentals",
@@ -20,11 +21,13 @@ export const metadata = {
 function Page() {
   authGatewayRedirect();
 
+  const books = getBooks();
+
   return (
     <Main>
       <h1 className="text-4xl">Book Catalogue</h1>
       <div className="mt-8 flex flex-col gap-8 lg:flex-row">
-        <div className="hidden w-72 space-y-6 rounded-3xl bg-gray-100 p-6 lg:block">
+        <div className="-ml-6 hidden w-72 space-y-6 rounded-3xl bg-gray-100 p-6 lg:block">
           <h2 className="text-lg">Book Filters</h2>
 
           <div className="space-y-2">
@@ -214,27 +217,14 @@ function Page() {
             <X className="h-5 w-5" />
           </button>
         </div>
-        <ul className="grid flex-1 grid-cols-1 gap-8 xs:grid-cols-2 xs:gap-4 md:grid-cols-3 lg:gap-8 xl:grid-cols-4">
-          <BookListItem
-            title="Achieve! A complete English course for CSEC English A examination: 2nd Edition"
-            price={3500}
-            bookId="english"
-          />
-          <BookListItem
-            title="Dime Mucho 1st Edition Student's Book 2"
-            price={2700}
-            bookId="spanish"
-          />
-          <BookListItem
-            title="Mathematics A complete course with CXC Questions"
-            price={4200}
-            bookId="mathematics"
-          />
-          <BookListItem
-            title="To Kill a Mockingbird"
-            price={2200}
-            bookId="english"
-          />
+        <ul className="grid flex-1 grid-cols-1 gap-8 xs:grid-cols-2 xs:gap-4 md:grid-cols-3 lg:grid-cols-2 lg:gap-8 xl:grid-cols-3 2xl:grid-cols-4">
+          {books.map((relatedBook) => (
+            <BookListItem
+              title={relatedBook.title}
+              price={relatedBook.price}
+              bookId={relatedBook.id}
+            />
+          ))}
         </ul>
       </div>
     </Main>
