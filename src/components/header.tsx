@@ -20,11 +20,11 @@ function Header() {
         {isLoggedIn && (
           <>
             <nav className="hidden gap-1 rounded-full bg-gray-100 p-1 lg:flex">
-              <NavLink href="/dashboard" className="rounded-l-full">
+              <NavLink href="/dashboard" className="rounded-l-3xl">
                 Dashboard
               </NavLink>
               <NavLink href="/catalogue">Book Catalogue</NavLink>
-              <NavLink href="/contact" className="rounded-r-full">
+              <NavLink href="/contact" className="rounded-r-3xl">
                 Contact Us
               </NavLink>
             </nav>
