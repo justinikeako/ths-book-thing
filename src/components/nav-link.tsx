@@ -6,9 +6,10 @@ import { usePathname } from "next/navigation";
 
 type NavLinkProps = React.PropsWithChildren<{
   href: string;
+  className?: string;
 }>;
 
-function NavLink({ href, children }: NavLinkProps) {
+function NavLink({ href, className, children }: NavLinkProps) {
   const pathname = usePathname();
   const active = pathname === href;
 
@@ -16,10 +17,11 @@ function NavLink({ href, children }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        "rounded-full px-4 py-2 ",
+        "rounded-md px-4 py-2",
         active
           ? "bg-gray-300 font-medium text-blue-950"
-          : "text-gray-500 hover:bg-gray-200 active:bg-gray-300"
+          : "text-gray-500 hover:bg-gray-200 active:bg-gray-300",
+        className
       )}
     >
       {children}
